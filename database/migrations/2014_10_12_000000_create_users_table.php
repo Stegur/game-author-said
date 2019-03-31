@@ -17,10 +17,10 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->boolean('is_admin');
-            $table->integer('matches');
-            $table->integer('wins');
-            $table->integer('fails');
+            $table->boolean('is_admin')->default(false);
+            $table->integer('matches')->default(0);
+            $table->integer('wins')->default(0);
+            $table->integer('fails')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
